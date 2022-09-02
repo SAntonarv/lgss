@@ -9,7 +9,7 @@ if ($idd=="")
 ?>
 <html>
 <head>
-<title>Счетчик жизни @дневника</title>
+<title>РЎС‡РµС‚С‡РёРє Р¶РёР·РЅРё @РґРЅРµРІРЅРёРєР°</title>
 <meta http-equiv="content-type" content="text/html; charset=windows-1251">
 <style type="text/css">
 body {
@@ -43,20 +43,20 @@ A:hover { COLOR: #00f; TEXT-DECORATION: none; }
 <BR>
 <div align=center>
 <table class="mtable">
-<tr><td style='text-align:center; padding:5px;'><B>Сколько дней Вашему DiaryRu-дневнику?</B></td></tr>
-<tr><td style='text-align:center; font-size:14px; padding:5px;'> Зарегистрируйте себе счетчик, и будете знать ответ каждый день :)<BR>
-Введите дату создания дневника или сообщества в формате 23.02.2007 <BR><BR>
+<tr><td style='text-align:center; padding:5px;'><B>РЎРєРѕР»СЊРєРѕ РґРЅРµР№ Р’Р°С€РµРјСѓ DiaryRu-РґРЅРµРІРЅРёРєСѓ?</B></td></tr>
+<tr><td style='text-align:center; font-size:14px; padding:5px;'> Р—Р°СЂРµРіРёСЃС‚СЂРёСЂСѓР№С‚Рµ СЃРµР±Рµ СЃС‡РµС‚С‡РёРє, Рё Р±СѓРґРµС‚Рµ Р·РЅР°С‚СЊ РѕС‚РІРµС‚ РєР°Р¶РґС‹Р№ РґРµРЅСЊ :)<BR>
+Р’РІРµРґРёС‚Рµ РґР°С‚Сѓ СЃРѕР·РґР°РЅРёСЏ РґРЅРµРІРЅРёРєР° РёР»Рё СЃРѕРѕР±С‰РµСЃС‚РІР° РІ С„РѕСЂРјР°С‚Рµ 23.02.2007 <BR><BR>
 <form action=reg.php method=post>
 <input type="text" name="idd" size="10">
-<input type="submit" value="Зарегистрировать!">
-<br><input type="checkbox" id="cbissoo" name="cbissoo" value="Сообщество">Счётчик для сообщества</input>
+<input type="submit" value="Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊ!">
+<br><input type="checkbox" id="cbissoo" name="cbissoo" value="РЎРѕРѕР±С‰РµСЃС‚РІРѕ">РЎС‡С‘С‚С‡РёРє РґР»СЏ СЃРѕРѕР±С‰РµСЃС‚РІР°</input>
 </form>
 </td></tr>
 
 </table></div>
 <div align="center"><font face="sans-serif" color="#0000FF" size="2"><BR>
-  Сделано <a href=http://www.diary.ru/~eatssp1/>Arvenktur'ом</a><BR>2007<BR>
-  Вопрос можно задать <a href=http://www.diary.ru/~eatssp1/p80248243.htm>здесь</a>
+  Г‘Г¤ГҐГ«Г Г­Г® <a href=http://www.diary.ru/~eatssp1/>Arvenktur'РѕРј</a><BR>2007<BR>
+  Р’РѕРїСЂРѕСЃ РјРѕР¶РЅРѕ Р·Р°РґР°С‚СЊ <a href=http://www.diary.ru/~eatssp1/p80248243.htm>Р·РґРµСЃСЊ</a>
   </font></div>
 <div align=center><!--Rating@Mail.ru counter-->
 <script language="javascript"><!--
@@ -70,11 +70,11 @@ a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);js=12;//--></script>
 js=13;//--></script><script language="javascript" type="text/javascript"><!--
 d.write('<a href="http://top.mail.ru/jump?from=2058810" target="_top">'+
 '<img src="http://da.c6.bf.a1.top.mail.ru/counter?id=2058810;t=56;js='+js+
-a+';rand='+Math.random()+'" alt="Рейтинг@Mail.ru" border="0" '+
+a+';rand='+Math.random()+'" alt="ГђГҐГ©ГІГЁГ­ГЈ@Mail.ru" border="0" '+
 'height="31" width="88"><\/a>');if(11<js)d.write('<'+'!-- ');//--></script>
 <noscript><a target="_top" href="http://top.mail.ru/jump?from=2058810">
 <img src="http://da.c6.bf.a1.top.mail.ru/counter?js=na;id=2058810;t=56" 
-height="31" width="88" border="0" alt="Рейтинг@Mail.ru"></a></noscript>
+height="31" width="88" border="0" alt="ГђГҐГ©ГІГЁГ­ГЈ@Mail.ru"></a></noscript>
 <script language="javascript" type="text/javascript"><!--
 if(11<js)d.write('--'+'>');//--></script>
 <!--// Rating@Mail.ru counter-->
@@ -90,13 +90,13 @@ if(11<js)d.write('--'+'>');//--></script>
   {
   error_reg_count();
   echo("<meta http-equiv='content-type' content='text/html; charset=windows-1251'>");
-  echo("<BR><div align=center>Ошибка чтения профиля :( </div>");
+  echo("<BR><div align=center>РћС€РёР±РєР° С‡С‚РµРЅРёСЏ РїСЂРѕС„РёР»СЏ :( </div>");
   exit();
   }
  $cntid = reguser($idd, $ddate);
  if ($cntid < 1)
  {
-  $msg = 'Регистрация счётчика не получилась :( Попробуйте еще раз.';
+  $msg = 'Р РµРіРёСЃС‚СЂР°С†РёСЏ СЃС‡С‘С‚С‡РёРєР° РЅРµ РїРѕР»СѓС‡РёР»Р°СЃСЊ :( РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·.';
   error_reg_count();
  } else
  {
@@ -107,7 +107,7 @@ if(11<js)d.write('--'+'>');//--></script>
   ?>
   <html>
   <head>
-  <title>Счетчик жизни @дневника</title>
+  <title>РЎС‡РµС‚С‡РёРє Р¶РёР·РЅРё @РґРЅРµРІРЅРёРєР°</title>
   <meta http-equiv="content-type" content="text/html; charset=windows-1251">
   </head>
   <body bgcolor=#808090>
@@ -115,13 +115,13 @@ if(11<js)d.write('--'+'>');//--></script>
   <table background="bgl.jpg" width="95%" align="center" border="3" cellspacing="3" cellpadding="13">
   <tr>
    <td align="center">
-    <font face="Arial" size="3"><B>Код Вашего счетчика:</B></font>
+    <font face="Arial" size="3"><B>РљРѕРґ Р’Р°С€РµРіРѕ СЃС‡РµС‚С‡РёРєР°:</B></font>
     <BR><HR><BR>
     <textarea cols=42 rows=5><?php echo($msg); ?></textarea>
    </td>
   </tr>
   </table>
-  <div align="center"><font face="arial" color="#FFFFFF" size="3">Вопросы по счетчику задавать <a href="http://diary.ru/~eatssp1/">здесь</a>. <BR>Изготовлено <a href="http://diary.ru/~eatssp1">Arvenktur</a></font></div>
+  <div align="center"><font face="arial" color="#FFFFFF" size="3">Р’РѕРїСЂРѕСЃС‹ РїРѕ СЃС‡РµС‚С‡РёРєСѓ Р·Р°РґР°РІР°С‚СЊ <a href="http://diary.ru/~eatssp1/">Р·РґРµСЃСЊ</a>. <BR>РР·РіРѕС‚РѕРІР»РµРЅРѕ <a href="http://diary.ru/~eatssp1">Arvenktur</a></font></div>
 
   </body>
   </html>
