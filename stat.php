@@ -2,13 +2,13 @@
 
  include "baseconf.inc";
 
-//----------------  Подключение к базе  
+
  $dbds = mysql_connect($server, $user, $pass);
  if(!$dbds)
-  {  die ("Не сумел подрубиться к серверу");   }
+  {  die ("РќРµС‚ РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє СЃРµСЂРІРµСЂСѓ");   }
  if(!@mysql_select_db($basename, $dbds))
-  {  die ("База - инвалид");   }
-//----------------  Запрос общей статистики посещений
+  {  die ("Р‘Р°Р·Р° - РёРЅРІР°Р»РёРґ");   }
+
  $query = "SELECT * FROM ".$s_tablename." WHERE idt = 1";
  $qdata = mysql_query($query);
  $data = mysql_fetch_array($qdata);
@@ -17,14 +17,14 @@
  if($dudate == "")
   {
   mysql_close($dbds);
-  die ("Нет данных под индексом 1");
+  die ("РЅРµС‚ РґР°РЅРЅС‹С… РїРѕРґ РёРЅРґРµРєСЃРѕРј 1");
   }
- echo ("Всего обращений к счетчикам: ".$dudate."<BR>");
- echo ("Всего зарегистрировано: ".$regcount."<BR>");
-//----------------  Запрос и вывод статистики по дням
+ echo ("Р«СЃРµРіРѕ РѕР±СЂР°С‰РµРЅРёР№ Рє СЃС‡РµС‚С‡РёРєР°Рј: ".$dudate."<BR>");
+ echo ("Р’СЃРµРіРѕ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅРѕ: ".$regcount."<BR>");
+
  $query = "SELECT * FROM ".$s_tablename." ORDER BY inday DESC LIMIT 30000";
  $qdata = mysql_query($query);
-echo("<table border=1><tr><td>Дата</td><td>Обращений</td><td>Регистраций</td><td>Регистраций дневников</td><td>Регистраций сообществ</td><td>Неудачных</td></tr>");
+echo("<table border=1><tr><td>Vivo</td><td>РћР±СЂР°С‰РµРЅРёР№</td><td>Р РµРіРёСЃС‚СЂР°С†РёР№</td><td>Р РµРіРёСЃС‚СЂР°С†РёР№ РґРЅРµРІРЅРёРєРѕРІ</td><td>Р РµРіРёСЃС‚СЂР°С†РёР№ СЃРѕРѕР±С‰РµСЃС‚РІ</td><td>РќРµСѓРґР°С‡РЅС‹С…</td></tr>");
  while ($data = mysql_fetch_array($qdata))
  {
  echo ("<tr><td> ".$data["inday"]."</td><td>".$data["counter"]."</td><td>".$data["regcounter"]."</td><td>".$data["regdiary"]."</td><td>".$data["regcommunity"]."</td><td>".$data["errorregcounter"]."</td></tr>");
