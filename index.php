@@ -3,14 +3,14 @@ Header("Content-type: image/gif;");
 
 include "msqldate.inc";
 //----------------  Procedures                        --
-//----------------  Вычисление времени в днях.
+//----------------  Calc time in days
 function datedist($sdt)
   {
    $sd = explode("-",$sdt);
    $ddist = Round(((time()+43200)-mktime(0,0,0,$sd[1],$sd[2],$sd[0]))/86400);
    return $ddist;
   }
-//----------------  Слияние двух рисунков
+//----------------  Merging two pics
 function imgmerge($src1, $src2, $x1, $y1, $x2, $y2, $cx, $cy)
   {
    for($yt = 0; $yt < $cy; $yt++)
@@ -25,11 +25,10 @@ function imgmerge($src1, $src2, $x1, $y1, $x2, $y2, $cx, $cy)
   }
 
 //--------------------------- Run
-//---------------------------------------------  Основное.
+//---------------------------------------------  Main
   date_default_timezone_set("Europe/Kiev");
   $id = $_GET["id"];
   $l_id = strlen($id);
-  // проверка правильности вх. данных
   $v_id = "";
   for ($x=0; ($x<10) && ($x < $l_id); $x++)
   {
@@ -37,8 +36,8 @@ function imgmerge($src1, $src2, $x1, $y1, $x2, $y2, $cx, $cy)
    if (($v_char <= "9") && ($v_char >= "0"))
     {$v_id = $v_id.$v_char;}
   }
- // запрос данных из базы
-  $userdata = reqdate($v_id);  // плюс статистика
+ 
+  $userdata = reqdate($v_id); 
   if ($userdata == "-1") { exit(); } else { $dsdate = datedist($userdata['create_d_date']); }
   if ($userdata['is_diary']) 
  {
@@ -52,7 +51,7 @@ function imgmerge($src1, $src2, $x1, $y1, $x2, $y2, $cx, $cy)
    $tlastchar = substr($dsdate, $datelen-2, 2);
    $imain = imagecreatefromgif("working/blank.gif");
    $isec = imagecreatefromgif("working/diantp2.gif");
-   //________ Формирование рисунка
+   
    For ($cc=0; $cc < imagecolorstotal($imain); $cc++)  {imagecolordeallocate($imain, $cc);}
    For ($cc=0; $cc < imagecolorstotal($isec); $cc++)
    {
@@ -78,7 +77,7 @@ function imgmerge($src1, $src2, $x1, $y1, $x2, $y2, $cx, $cy)
      $curx = $curx - 29;
     }
    }
-   //________ Рисование чисел
+   
    for ($t1 = 0; $t1 < $datelen; $t1++)
    {
     $tchar = substr($dsdate, $datelen-1-$t1, 1);
@@ -141,7 +140,7 @@ function imgmerge($src1, $src2, $x1, $y1, $x2, $y2, $cx, $cy)
    $tlastchar = substr($dsdate, $datelen-2, 2);
    $imain = imagecreatefromgif("working/blank.gif");
    $isec = imagecreatefromgif("working/diantp3.gif");
-   //________ Формирование рисунка
+   
    For ($cc=0; $cc < imagecolorstotal($imain); $cc++)  {imagecolordeallocate($imain, $cc);}
    For ($cc=0; $cc < imagecolorstotal($isec); $cc++)
    {
@@ -167,7 +166,7 @@ function imgmerge($src1, $src2, $x1, $y1, $x2, $y2, $cx, $cy)
      $curx = $curx - 29;
     }
    }
-   //________ Рисование чисел
+   
    for ($t1 = 0; $t1 < $datelen; $t1++)
    {
     $tchar = substr($dsdate, $datelen-1-$t1, 1);
